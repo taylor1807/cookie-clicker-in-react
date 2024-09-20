@@ -1,0 +1,9 @@
+.cookie-counter {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .cookie-counter {
+    font-size: 18px;
+  }
+}

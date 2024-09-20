@@ -1,0 +1,39 @@
+.clickable-cookie {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f0c14b;
+  border: 1px solid #a18600;
+  margin: 20px;
+  transition: transform 0.2s;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.clickable-cookie:active {
+  animation: scaleUp 0.1s forwards;
+}

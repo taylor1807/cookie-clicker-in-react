@@ -1,0 +1,32 @@
+.options {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.options-button {
+  font-size: 3rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-right: 0.5rem;
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.options-button:active {
+  animation: scaleUp 0.1s forwards;
+  color: #333;
+  background-color: #fff;
+}
+.options-button:hover {
+  background-color: #a18600;
+}

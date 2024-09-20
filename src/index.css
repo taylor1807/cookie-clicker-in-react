@@ -1,0 +1,67 @@
+body {
+  margin-top: 100px;
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url("../public/assets/nom-800.webp");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../public/assets/nom-1920.webp");
+  }
+  .container {
+    display: grid;
+    grid-template-areas:
+      "upgrades upgrades upgrades upgrades upgrades upgrades"
+      "clickableCookie cookieCounter cookieCounter cookieCounter cookieCounter cookieCounter";
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-rows: auto 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    row-gap: 50px;
+  }
+
+  .upgrades {
+    grid-area: upgrades;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .clickable-cookie {
+    grid-area: clickableCookie;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #f0c14b;
+    border: 1px solid #a18600;
+    margin: 20px;
+    transition: transform 0.2s;
+  }
+
+  .clickable-cookie:hover {
+    transform: scale(1.05);
+  }
+
+  .cookie-counter {
+    grid-area: cookieCounter;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
