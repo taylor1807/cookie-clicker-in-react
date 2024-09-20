@@ -11,7 +11,7 @@ export default function Upgrades({
   const [upgradeSound, setUpgradeSound] = useState(null);
 
   useEffect(() => {
-    const sound = new Audio("public/assets/upgrade.mp3");
+    const sound = new Audio("./assets/upgrade.mp3");
     setUpgradeSound(sound);
   }, []);
 

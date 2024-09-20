@@ -5,7 +5,7 @@ export default function ClickableCookie({ setCookies }) {
   const [clickSound, setClickSound] = useState(null);
 
   useEffect(() => {
-    const sound = new Audio("public/assets/click.mp3");
+    const sound = new Audio("./assets/click.mp3");
     setClickSound(sound);
   }, []);
 
