@@ -101,6 +101,7 @@ export default function App() {
         upgrades={upgrades}
         purchasedUpgrades={purchasedUpgrades}
         setPurchasedUpgrades={setPurchasedUpgrades}
+        isSoundEffectsEnabled={isSoundEffectsEnabled}
       />
       <Timer
         className="timer"

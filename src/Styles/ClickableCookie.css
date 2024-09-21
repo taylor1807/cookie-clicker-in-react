@@ -8,6 +8,8 @@
   border-radius: 50%;
   background-color: #f0c14b;
   border: 1px solid #a18600;
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+
   margin: 20px;
   transition: transform 0.2s;
   -webkit-tap-highlight-color: transparent;

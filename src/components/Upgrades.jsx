@@ -7,6 +7,7 @@ export default function Upgrades({
   upgrades,
   purchasedUpgrades,
   setPurchasedUpgrades,
+  isSoundEffectsEnabled,
 }) {
   const [upgradeSound, setUpgradeSound] = useState(null);
 
@@ -28,7 +29,7 @@ export default function Upgrades({
       upgrade.cost = Math.round(upgrade.cost * 1.25);
       console.log("Upgrade purchased:", upgrade.name);
 
-      if (upgradeSound) {
+      if (isSoundEffectsEnabled) {
         upgradeSound.play();
         console.log("Upgrade sound played.");
       }
