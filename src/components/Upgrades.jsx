@@ -48,8 +48,8 @@ export default function Upgrades({
       {upgrades.map((upgrade) => (
         <div key={upgrade.id} className="upgrade">
           <h2>{upgrade.name}</h2>
-          <p id="cost">Cost: {upgrade.cost}</p>
-          <p id="increase">Increase: {upgrade.increase}</p>
+          <p id="cost">🍪: {upgrade.cost}</p>
+          <p id="increase">🍪/s Increase: {upgrade.increase}</p>
           <p id="purchased">Purchased: {purchasedUpgrades[upgrade.id] || 0}</p>
           <button
             className="upgrade-button"
