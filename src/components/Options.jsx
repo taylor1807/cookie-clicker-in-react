@@ -9,7 +9,10 @@ export default function Options({
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 
   const handleToggleOptions = () => {
-    setIsOptionsVisible(!isOptionsVisible);
+    setIsOptionsVisible((prev) => {
+      console.log("Options visibility toggled:", !prev);
+      return !prev;
+    });
   };
 
   return (

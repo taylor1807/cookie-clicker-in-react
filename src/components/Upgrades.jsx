@@ -17,18 +17,27 @@ export default function Upgrades({
 
   const handleBuyUpgrade = (upgrade) => {
     const { id, cost } = upgrade;
+    console.log("Buying upgrade:", upgrade.name);
 
     if (cookies >= cost) {
-      setCookies((previousCookies) => previousCookies - cost);
-      setPurchasedUpgrades((previousUpgrades) => ({
-        ...previousUpgrades,
-        [id]: (previousUpgrades[id] || 0) + 1,
+      setCookies((prevCookies) => prevCookies - cost);
+      setPurchasedUpgrades((prevUpgrades) => ({
+        ...prevUpgrades,
+        [id]: (prevUpgrades[id] || 0) + 1,
       }));
       upgrade.cost = Math.round(upgrade.cost * 1.25);
-      upgradeSound.play();
+      console.log("Upgrade purchased:", upgrade.name);
+
+      if (upgradeSound) {
+        upgradeSound.play();
+        console.log("Upgrade sound played.");
+      }
+
+      //below not needed anymore now the buttons grey out but left in as a backup in case of future issues
     } else {
       let shortage = cost - cookies;
-      alert(`Not enough cookies, ${shortage} more cookies needed.`);
+      alert(`Not enough cookies. Need ${shortage} more.`);
+      console.log("Not enough cookies to buy upgrade.");
     }
   };
 

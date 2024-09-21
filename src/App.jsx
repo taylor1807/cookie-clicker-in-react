@@ -9,22 +9,29 @@ import Options from "./components/Options";
 export default function App() {
   const [cookies, setCookies] = useState(() => {
     const storedCookies = localStorage.getItem("cookies");
+    console.log("Loaded cookies:", storedCookies || 0);
     return storedCookies ? parseInt(storedCookies) : 0;
   });
 
   const [cookiesPerSecond, setCookiesPerSecond] = useState(() => {
     const storedCps = localStorage.getItem("cookiesPerSecond");
+    console.log("Loaded cookies per second:", storedCps || 0);
     return storedCps ? parseInt(storedCps) : 0;
   });
 
   const [upgrades, setUpgrades] = useState([]);
   const [purchasedUpgrades, setPurchasedUpgrades] = useState(() => {
     const storedUpgrades = localStorage.getItem("purchasedUpgrades");
+    console.log("Loaded purchased upgrades:", storedUpgrades || {});
     return storedUpgrades ? JSON.parse(storedUpgrades) : {};
   });
 
   const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(() => {
     const storedSoundEffects = localStorage.getItem("isSoundEffectsEnabled");
+    console.log(
+      "Loaded sound effects setting:",
+      storedSoundEffects !== null ? storedSoundEffects : true
+    );
     return storedSoundEffects ? JSON.parse(storedSoundEffects) : true;
   });
 
@@ -35,10 +42,17 @@ export default function App() {
       const purchasedCount = purchasedUpgrades[upgrade.id] || 0;
       return total + upgrade.increase * purchasedCount;
     }, 0);
+    console.log("Total Cookies Per Second:", totalCps);
     setCookiesPerSecond(totalCps);
   }, [purchasedUpgrades, upgrades]);
 
   useEffect(() => {
+    // console.log("Saving to localStorage:", {
+    //   cookies,
+    //   cookiesPerSecond,
+    //   purchasedUpgrades,
+    //   isSoundEffectsEnabled,
+    // });
     localStorage.setItem("cookies", cookies);
     localStorage.setItem("cookiesPerSecond", cookiesPerSecond);
     localStorage.setItem(
@@ -52,15 +66,19 @@ export default function App() {
   }, [cookies, cookiesPerSecond, purchasedUpgrades, isSoundEffectsEnabled]);
 
   const handleResetGame = () => {
+    // console.log("Game reset.");
     setCookies(0);
     setCookiesPerSecond(0);
     setPurchasedUpgrades({});
     setIsSoundEffectsEnabled(true);
-    setResetUpgrades((previousState) => !previousState);
+    setResetUpgrades((prev) => !prev);
   };
 
   const handleToggleSoundEffects = () => {
-    setIsSoundEffectsEnabled((previousState) => !previousState);
+    setIsSoundEffectsEnabled((prev) => {
+      // console.log("Sound effects toggled:", !prev);
+      return !prev;
+    });
   };
 
   return (
@@ -70,11 +88,12 @@ export default function App() {
         cookies={cookies}
         cookiesPerSecond={cookiesPerSecond}
       />
-      <ClickableCookie className="clickable-cookie" setCookies={setCookies} />
-      <UpgradesData
-        setUpgrades={setUpgrades}
-        resetUpgrades={resetUpgrades}
-      />{" "}
+      <ClickableCookie
+        className="clickable-cookie"
+        setCookies={setCookies}
+        isSoundEffectsEnabled={isSoundEffectsEnabled}
+      />
+      <UpgradesData setUpgrades={setUpgrades} resetUpgrades={resetUpgrades} />
       <Upgrades
         className="upgrades"
         cookies={cookies}

@@ -1,7 +1,7 @@
 import "../Styles/ClickableCookie.css";
 import { useEffect, useState } from "react";
 
-export default function ClickableCookie({ setCookies }) {
+export default function ClickableCookie({ setCookies, isSoundEffectsEnabled }) {
   const [clickSound, setClickSound] = useState(null);
 
   useEffect(() => {
@@ -11,9 +11,16 @@ export default function ClickableCookie({ setCookies }) {
 
   const handleClick = () => {
     setCookies((cookies) => cookies + 1);
-    clickSound.play();
+    // console.log(
+    //   "Cookie clicked, isSoundEffectsEnabled:",
+    //   isSoundEffectsEnabled
+    // );
+    if (isSoundEffectsEnabled) {
+      // console.log("Playing click sound.");
+      clickSound.playbackRate = 5;
+      clickSound.play();
+    }
   };
-
   return (
     <div>
       <img
