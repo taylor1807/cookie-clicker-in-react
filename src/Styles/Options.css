@@ -1,15 +1,15 @@
 .options {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 25px;
+  left: 175px;
 }
 .options-button {
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 0.6rem 1.1rem;
+  padding: 0.3rem 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s;
   margin-right: 0.5rem;
@@ -22,11 +22,73 @@
     transform: scale(1.2);
   }
 }
-.options-button:active {
+.options-button:active,
+#reset:active,
+.upgrade-button:active {
   animation: scaleUp 0.1s forwards;
   color: #333;
   background-color: #fff;
 }
-.options-button:hover {
+.options-button:hover,
+#reset:hover,
+.upgrade-button:hover {
   background-color: #a18600;
+}
+#options-objects {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #4caf50;
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox::after {
+  display: block;
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 9px;
+  border: 1px solid black;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+#reset,
+.upgrade-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-right: 0.5rem;
+  margin-left: 10px;
+}
+.upgrade-button:disabled {
+  background-color: lightgrey;
+  color: #333;
 }

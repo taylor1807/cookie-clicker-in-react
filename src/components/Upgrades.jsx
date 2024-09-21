@@ -47,10 +47,11 @@ export default function Upgrades({
       {upgrades.map((upgrade) => (
         <div key={upgrade.id} className="upgrade">
           <h2>{upgrade.name}</h2>
-          <p>Cost: {upgrade.cost}</p>
-          <p>Increase: {upgrade.increase}</p>
-          <p>Purchased: {purchasedUpgrades[upgrade.id] || 0}</p>
+          <p id="cost">Cost: {upgrade.cost}</p>
+          <p id="increase">Increase: {upgrade.increase}</p>
+          <p id="purchased">Purchased: {purchasedUpgrades[upgrade.id] || 0}</p>
           <button
+            className="upgrade-button"
             onClick={() => handleBuyUpgrade(upgrade)}
             disabled={cookies < upgrade.cost}
           >

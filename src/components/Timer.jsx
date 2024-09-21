@@ -1,4 +1,3 @@
-import "../Styles/Timer.css";
 import { useEffect } from "react";
 
 export default function Timer({ setCookies, cookiesPerSecond }) {

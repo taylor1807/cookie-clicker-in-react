@@ -5,14 +5,17 @@ body {
   background-image: url("../public/assets/nom-800.webp");
   background-size: cover;
   background-repeat: repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container {
   max-width: 800px;
-  margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   body {
     background-image: url("../public/assets/nom-1920.webp");
   }

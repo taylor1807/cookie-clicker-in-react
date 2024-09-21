@@ -1,9 +1,0 @@
-.timer {
-  font-size: 18px;
-}
-
-@media (min-width: 768px) {
-  .timer {
-    font-size: 14px;
-  }
-}

@@ -21,16 +21,20 @@ export default function Options({
         Options
       </button>
       {isOptionsVisible && (
-        <div>
+        <div id="options-objects">
           <label>
             <input
+              id="chkbox"
               type="checkbox"
               checked={isSoundEffectsEnabled}
               onChange={toggleSoundEffects}
             />
+            <span className="custom-checkbox"></span>
             Sound Effects
           </label>
-          <button onClick={resetGame}>Reset Progress</button>
+          <button id="reset" onClick={resetGame}>
+            Reset
+          </button>
         </div>
       )}
     </div>

@@ -5,7 +5,6 @@ import "./index.css";
 import "./Styles/ClickableCookie.css";
 import "./Styles/CookieCounter.css";
 import "./Styles/Options.css";
-import "./Styles/Timer.css";
 import "./Styles/Upgrades.css";
 
 createRoot(document.getElementById("root")).render(
