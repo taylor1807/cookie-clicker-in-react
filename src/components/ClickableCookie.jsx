@@ -16,7 +16,7 @@ export default function ClickableCookie({ setCookies, isSoundEffectsEnabled }) {
     //   isSoundEffectsEnabled
     // );
     if (isSoundEffectsEnabled) {
-      // console.log("Playing click sound.");
+      // console.log("playing click sound.");
       clickSound.playbackRate = 5;
       clickSound.play();
     }

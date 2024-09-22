@@ -10,15 +10,15 @@ export default function Upgrades({
   isSoundEffectsEnabled,
 }) {
   const [upgradeSound, setUpgradeSound] = useState(null);
-
+  // used the same sound effects as week03
   useEffect(() => {
     const sound = new Audio("./assets/upgrade.mp3");
     setUpgradeSound(sound);
   }, []);
-
+  // function to handle the buying of upgrades added previous upgrades to show how many of each purchased and Math.round from week03 to modify the upgrade cost
   const handleBuyUpgrade = (upgrade) => {
     const { id, cost } = upgrade;
-    console.log("Buying upgrade:", upgrade.name);
+    // console.log("upgrade bought:", upgrade.name);
 
     if (cookies >= cost) {
       setCookies((prevCookies) => prevCookies - cost);
@@ -27,21 +27,21 @@ export default function Upgrades({
         [id]: (prevUpgrades[id] || 0) + 1,
       }));
       upgrade.cost = Math.round(upgrade.cost * 1.25);
-      console.log("Upgrade purchased:", upgrade.name);
+      // console.log("upgrade purchased:", upgrade.name);
 
       if (isSoundEffectsEnabled) {
         upgradeSound.play();
-        console.log("Upgrade sound played.");
+        // console.log("playing upgrade sound");
       }
 
       //below not needed anymore now the buttons grey out but left in as a backup in case of future issues
     } else {
       let shortage = cost - cookies;
       alert(`Not enough cookies. Need ${shortage} more.`);
-      console.log("Not enough cookies to buy upgrade.");
+      // console.log("insufficient cookies.");
     }
   };
-
+  //adding upgardes to the dom, added a terniary to display different text when there is not enough cookies
   return (
     <div className="upgrades">
       <h1>Upgrades</h1>

@@ -14,7 +14,7 @@
   transition: background-color 0.3s ease, transform 0.2s;
   margin-right: 0.5rem;
   box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-  font-family: "Roboto", sans-serif;
+  font-family: "Jacquarda Bastarda 9", serif;
 }
 @keyframes scaleUp {
   0% {
@@ -90,7 +90,8 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   margin-right: 0.5rem;
   margin-left: 10px;
   box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-  font-family: "Roboto", sans-serif;
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: bold;
 }
 .upgrade-button:disabled {
   background-color: lightgrey;

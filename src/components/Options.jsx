@@ -10,7 +10,7 @@ export default function Options({
 
   const handleToggleOptions = () => {
     setIsOptionsVisible((prev) => {
-      console.log("Options visibility toggled:", !prev);
+      // console.log("options toggled:", !prev);
       return !prev;
     });
   };
