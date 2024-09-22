@@ -18,6 +18,7 @@ body {
 @media (min-width: 800px) {
   body {
     background-image: url("../public/assets/nom-1920.webp");
+    margin-top: 0;
   }
   .container {
     display: grid;

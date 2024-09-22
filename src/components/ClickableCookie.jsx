@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 
 export default function ClickableCookie({ setCookies, isSoundEffectsEnabled }) {
   const [clickSound, setClickSound] = useState(null);
-
+  //click sound added from week03
   useEffect(() => {
     const sound = new Audio("./assets/click.mp3");
     setClickSound(sound);
   }, []);
-
+  //function to increase cookies each click and play soundeffect when clicked
   const handleClick = () => {
     setCookies((cookies) => cookies + 1);
     // console.log(
@@ -17,10 +17,11 @@ export default function ClickableCookie({ setCookies, isSoundEffectsEnabled }) {
     // );
     if (isSoundEffectsEnabled) {
       // console.log("playing click sound.");
-      clickSound.playbackRate = 5;
+      clickSound.playbackRate = 5; //found online as i felt the audio was delayed
       clickSound.play();
     }
   };
+  //adding cookie image to the dom
   return (
     <div>
       <img

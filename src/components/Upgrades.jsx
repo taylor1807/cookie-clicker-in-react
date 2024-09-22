@@ -26,7 +26,7 @@ export default function Upgrades({
         ...prevUpgrades,
         [id]: (prevUpgrades[id] || 0) + 1,
       }));
-      upgrade.cost = Math.round(upgrade.cost * 1.25);
+      upgrade.cost = Math.round(upgrade.cost * 1.175);
       // console.log("upgrade purchased:", upgrade.name);
 
       if (isSoundEffectsEnabled) {
